@@ -13,7 +13,7 @@ public class Utils {
     private static final String FILE_NAME = "settings.txt";
 
     private static final Gson gson = createGson();
-    private static final DateTimeFormatter DATE_TIME_FORMATTER =
+    public static final DateTimeFormatter DATE_TIME_FORMATTER =
             DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
     private static Gson createGson() {
