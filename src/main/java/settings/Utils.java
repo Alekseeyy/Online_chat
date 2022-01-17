@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -30,5 +31,18 @@ public class Utils {
     public static String getTime() {
         final LocalDateTime time = LocalDateTime.now();
         return time.format(DATE_TIME_FORMATTER);
+    }
+
+    public static void createFile(String NAME) {
+        String newLog = "Файл file.log успешно создан";
+
+        File logFile = new File(NAME);
+        try {
+            if (logFile.createNewFile()) {
+                System.out.println(newLog);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
